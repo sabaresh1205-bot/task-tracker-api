@@ -1,0 +1,55 @@
+# Task Tracker API
+
+A simple backend API built using Django REST Framework.
+
+## Features
+
+- User Registration
+- User Login with JWT
+- Role based access (Admin / User)
+- Task CRUD operations
+- Unit tests
+
+## Tech Stack
+
+- Python
+- Django
+- Django REST Framework
+- SQLite
+- JWT Authentication
+
+## Installation
+
+git clone <repo>
+
+cd task_tracker
+
+pip install -r requirements.txt
+
+python manage.py migrate
+
+python manage.py runserver
+
+Server will run at:
+http://127.0.0.1:8000/
+
+## API Endpoints
+
+POST /auth/register/
+POST /auth/login/
+
+GET /tasks/
+POST /tasks/
+PUT /tasks/{id}/
+DELETE /tasks/{id}/
+
+## Running Tests
+
+python manage.py test
+
+## Environment Variables
+
+Create a .env file and add:
+
+SECRET_KEY=your_secret_key
+DEBUG=True
