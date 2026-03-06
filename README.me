@@ -1,20 +1,122 @@
 # Task Tracker API
 
-This is a simple backend project built using **Python and Django**. The project allows users to create, view, update, and delete tasks.
+## Project Overview
 
-I created this project to practice backend development concepts like **Django models, views, APIs, and database operations**. It helps understand how a backend application manages data and handles requests.
+Task Tracker API is a simple backend application built using **Django**. The purpose of this project is to manage tasks through a web interface and backend API. Users can register, login, create tasks, update tasks, mark tasks as completed, and delete tasks. This project mainly focuses on backend development concepts such as models, views, authentication, and CRUD operations.
+
+This project was created as a backend practice assignment to understand how APIs work and how a backend server handles user requests and database operations.
 
 ## Features
 
-* Add new tasks
-* View all tasks
-* Update task details
-* Delete tasks
+* User Registration
+* User Login & Authentication
+* Create Tasks
+* View Tasks
+* Update Tasks
+* Mark Tasks as Completed
+* Delete Tasks
+* Task status tracking
+* Basic API endpoints for task management
 
 ## Technologies Used
 
 * Python
 * Django
-* SQLite
+* Django REST Framework (if used)
+* SQLite (default Django database)
+* Git & GitHub
 
-This project was created for learning and improving my backend development skills.
+## Installation & Setup
+
+### 1. Clone the Repository
+
+```
+git clone https://github.com/your-username/task-tracker-api.git
+cd task-tracker-api
+```
+
+### 2. Create Virtual Environment
+
+```
+python -m venv env
+```
+
+### 3. Activate Virtual Environment
+
+Windows:
+
+```
+env\Scripts\activate
+```
+
+### 4. Install Dependencies
+
+```
+pip install -r requirements.txt
+```
+
+---
+
+## Database Setup
+
+Run migrations to create database tables.
+
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
+---
+
+## Run the Development Server
+
+Start the Django server:
+
+```
+python manage.py runserver
+```
+
+Now open your browser and go to:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+## Running Tests
+
+To run the project tests:
+
+```
+python manage.py test
+```
+
+This command will execute all the test cases written inside the project.
+
+## Example Task Model
+
+class Task(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    completed = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+## Learning Outcome
+
+Through this project I learned:
+
+* Django project structure
+* CRUD operations
+* API development
+* Database migrations
+* Authentication basics
+* Testing in Django
+* Version control using Git
+
+
+## Author
+
+Sabaresh R
+
+Backend Developer (Fresher)
