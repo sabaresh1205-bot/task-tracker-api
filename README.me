@@ -30,67 +30,45 @@ This project was created as a backend practice assignment to understand how APIs
 
 ### 1. Clone the Repository
 
-```
 git clone https://github.com/your-username/task-tracker-api.git
 cd task-tracker-api
-```
 
 ### 2. Create Virtual Environment
 
-```
 python -m venv env
-```
 
 ### 3. Activate Virtual Environment
 
 Windows:
 
-```
 env\Scripts\activate
-```
 
 ### 4. Install Dependencies
 
-```
 pip install -r requirements.txt
-```
-
----
 
 ## Database Setup
 
 Run migrations to create database tables.
 
-```
 python manage.py makemigrations
 python manage.py migrate
-```
-
----
 
 ## Run the Development Server
 
 Start the Django server:
 
-```
 python manage.py runserver
-```
 
 Now open your browser and go to:
 
-```
 http://127.0.0.1:8000
-```
-
----
 
 ## Running Tests
 
 To run the project tests:
 
-```
 python manage.py test
-```
 
 This command will execute all the test cases written inside the project.
 
@@ -115,8 +93,116 @@ Through this project I learned:
 * Version control using Git
 
 
-## Author
+## Sample API Requests
 
-Sabaresh R
+Below are some example requests to interact with the API.
 
-Backend Developer (Fresher)
+### Register User
+
+**Endpoint**
+
+POST /auth/register/
+
+**Request Body**
+
+```json
+{
+  "username": "user1",
+  "email": "user@test.com",
+  "password": "123456",
+  "role": "user"
+}
+
+### Login User
+
+**Endpoint**
+
+POST /auth/login/
+
+**Request Body**
+
+```json
+{
+  "username": "user1",
+  "password": "123456"
+}
+
+**Response Example**
+
+```json
+{
+  "access": "your_jwt_access_token",
+  "refresh": "your_jwt_refresh_token"
+}
+
+Use the **access token** in the Authorization header for protected routes.
+
+Authorization: Bearer your_jwt_access_token
+
+### Create Task
+
+**Endpoint**
+
+POST /tasks/
+
+**Headers**
+
+Authorization: Bearer your_jwt_access_token
+
+**Request Body**
+
+```json
+{
+  "title": "Finish backend assignment",
+  "description": "Complete Django REST API project",
+  "completed": false
+}
+
+### Get All Tasks
+
+**Endpoint**
+
+GET /tasks/
+
+**Headers**
+
+Authorization: Bearer your_jwt_access_token
+
+### Get Single Task
+
+**Endpoint**
+
+GET /tasks/1/
+
+**Headers**
+
+Authorization: Bearer your_jwt_access_token
+
+### Update Task
+
+**Endpoint**
+
+PUT /tasks/1/
+
+**Headers**
+
+Authorization: Bearer your_jwt_access_token
+
+**Request Body**
+
+```json
+{
+  "title": "Finish backend assignment",
+  "description": "Update the API documentation",
+  "completed": true
+}
+
+### Delete Task
+
+**Endpoint**
+
+DELETE /tasks/1/
+
+**Headers**
+
+Authorization: Bearer your_jwt_access_token
